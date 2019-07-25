@@ -1,0 +1,3 @@
+Using the principle of binary search, the input size is consider as the input value, and the search of the root is like found the value in an array of secuential elements until the input value, but is not required to create an array. The search condition is to find a value multiplying itself twice.
+
+Time complexity is equals of the binary search, so is ```O(log(n))```. Space complexity not changes, so in this case is ```O(1)```.
