@@ -1,0 +1,3 @@
+The solution found was to order the elements in the array and sort them to create a number based on a sequence that allows us to sum the higher digits as the maximum as possible inside the value created from this array. The sequence is, the max elements should be in the left of the value created, for both numbers, and the fewer values should be located in the right position. Selecting the higher as the digit in the rightest position for the first element and the next digit from the array sorted, as de rightest for the second position and continue in this sequence, we can obtain the result desired.
+
+In this problem a sorted algorithm is required, so quick sort was selected for this job, where the time complexity is O(nlog(n)), and the space complexity is O(1).
