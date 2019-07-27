@@ -7,6 +7,9 @@ def rotated_array_search(input_array, target):
     Returns:
        int: Index or -1
     """
+    if(len(input_array) == 0):
+        return -1
+
     pivot = search_pivot(input_array)
     last_index = len(input_array)-1
 
@@ -21,6 +24,9 @@ def rotated_array_search(input_array, target):
 
 
 def binary_search_recursive(array, target, start_index, end_index):
+    if start_index < 0 or end_index < 0:
+        return -1
+
     if start_index > end_index:
         return -1
 
@@ -62,12 +68,14 @@ def linear_search(input_list, number):
             return index
     return -1
 
+
 def test_search_pivot(input_array, expected):
     index = search_pivot(input_array)
     if index == expected:
         print("Success")
     else:
         print("Fail")
+
 
 def test_function(test_case):
     input_list = test_case[0]
@@ -77,23 +85,26 @@ def test_function(test_case):
     else:
         print("Fail")
 
+
 test_search_pivot([4, 5, 6, 7, 8, 0, 1, 2, 3], 5)
 test_function([[4, 5, 6, 7, 8, 0, 1, 2, 3], 8])
 
 test_search_pivot([4, 0, 1, 2, 3], 1)
-test_function([[4, 0, 1, 2, 3], 4, 0])
+test_function([[4, 0, 1, 2, 3], 4])
 
 test_search_pivot([0, 1, 2, 3], 0)
-test_function([[0, 1, 2, 3], 3, 3])
+test_function([[0, 1, 2, 3], 3])
 
 test_search_pivot([2, 3, 4, 0, 1], 3)
-test_function([[2, 3, 4, 0, 1], 3, 1])
+test_function([[2, 3, 4, 0, 1], 3])
 
 test_search_pivot([1, 2, 3, 4, 0], 4)
-test_function([[1, 2, 3, 4, 0], 4, 3])
+test_function([[1, 2, 3, 4, 0], 4])
 
 test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
 test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 8])
 test_function([[6, 7, 8, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 10])
+test_function([[1, 1, 1, 1, 1], 1])
+test_function([[], 90])
